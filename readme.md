@@ -31,25 +31,29 @@ To learn you can start with "recording macro" to see what excel is recording, bu
 #### Userform
 Some example for the Userform
 
-    Userform
-        Textbox 
-            Multiline : True
-            EnterKeyBehavior = True (sinon ctrl + Enter)
-
+```vb
+Userform
+    Textbox 
+        Multiline : True
+        EnterKeyBehavior = True (sinon ctrl + Enter)
+```
 
 
 #### Closing procedure
 Procedure to close a file
 
-    'Sub arret() stop the current sub
-	ActiveWorkbook.Save
-	ActiveWorkbook.Close True
+```vb
+'Sub arret() stop the current sub
+    ActiveWorkbook.Save
+    ActiveWorkbook.Close True
 	End Sub
+```
 
 Close the file after 10 seconds
 
-    Private Sub Workbook_Open()
-	temp = Now + TimeValue(« 00:00:10 »)
-	Application.OnTime temp, « arret »
+```vb
+Private Sub Workbook_Open()
+     temp = Now + TimeValue(« 00:00:10 »)
+     Application.OnTime temp, « arret »
 	End Sub
-
+```
