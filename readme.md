@@ -28,6 +28,15 @@ To learn you can start with "recording macro" to see what excel is recording, bu
 - [Extend Office: AutoComplete](https://www.extendoffice.com/documents/excel/2401-excel-drop-down-list-autocomplete.html)
 - [Convert data type vb](http://www.convertdatatypes.com/Language-VB6-VBA.html)
 
+#### Hide "0" value of empty cells
+
+Sometime there are some 0 that pops up with the below formulas, so here is a trick to hide them through formating.
+Available [here](https://support.office.com/en-us/article/Display-or-hide-zero-values-3ec7a433-46b8-4516-8085-a00e9e476b03):
+
+- Home > Format > Format Cells
+- Number > Custom
+- type : `0;;;@`
+
 #### Userform
 Some example for the Userform
 
@@ -101,7 +110,7 @@ Or you can use this formula which will look in the list t
 
 #### Have a google like search
 
-Here is a sweet example that requires 1 column with the values and 3 helping columns and a cell that will be used to do the google like search:
+[Here](https://trumpexcel.com/excel-drop-down-list-with-search-suggestions/) is a sweet example that requires 1 column with the values and 3 helping columns and a cell that will be used to do the google like search:
 
 | **E**. Available values | **F**. criteria matching | **G**. Occurence count | **H**. Found values |
 |------------------|-------------------|-----------------|--------------|
