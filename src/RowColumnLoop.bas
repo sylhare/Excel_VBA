@@ -72,4 +72,3 @@ Sub allRows_simple()
     MsgBox (count)
     ScreenUpdating = True
 End Sub
-
