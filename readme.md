@@ -109,6 +109,7 @@ The name will be used for the combobox (dropdown in developper > insert > active
 - ListFillRange: name of the created named range
 - MatchEntry: 2 – fmMatchEntryNone
 
+The LinkedCell `B3` is the searching cell, it will print the result of the search.
 If you haven't change the name of the combobox, the default one should be `ComboBox1` and you can copy paste that into the VBA part of your sheet:
 
 ```vb
@@ -123,23 +124,38 @@ This sub ComboBox1_change() overwrites the default attitude of the ComboBox obje
 
 ## Other tips
 
+#### Calling a Sub
+
+Here are an example on how to call a subroutine: [here](https://msdn.microsoft.com/en-us/library/office/gg251432.aspx)
+It can be tricky.
+```vb
+TestSub "N23:Q23", 1
+Call TestSub("N23:Q23", 1)
+
+
+Sub TestSub(xRange As Range, val As Integer)
+	'some coding
+End Sub
+```
+
+
+
 #### Accelerate Macro
 
 Here are a couple of lines that can greatly improve the efficiency of your VBA macro.
 
 ```vb
 Sub example()
+	'Stop automatic calculation of excel cells
+	Application.Calculation = xlCalculationManual
+	'Stop screen updating
+	Application.ScreenUpdating = False
 
-'Stop automatic calculation of excel cells
-Application.Calculation = xlCalculationManual
-'Stop screen updating
-Application.ScreenUpdating = False
+	'Some code
 
-'Some code
-
-'Put it back to "normal"
-Application.Calculation = xlCalculationAutomatic
-Application.ScreenUpdating = True
+	'Put it back to "normal"
+	Application.Calculation = xlCalculationAutomatic
+	Application.ScreenUpdating = True
 End Sub
 ```
 
@@ -170,7 +186,7 @@ Procedure to close a file
 'Sub arret() stop the current sub
     ActiveWorkbook.Save
     ActiveWorkbook.Close True
-	End Sub
+End Sub
 ```
 
 Close the file after 10 seconds
@@ -179,5 +195,5 @@ Close the file after 10 seconds
 Private Sub Workbook_Open()
      temp = Now + TimeValue(« 00:00:10 »)
      Application.OnTime temp, « arret »
-	End Sub
+End Sub
 ```
