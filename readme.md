@@ -38,7 +38,7 @@ To manage the named ranges, you can go in **Formulas** > **Name Manager**. You c
 To [create a named range](https://support.office.com/fr-fr/article/Cr%C3%A9er-une-liste-d%C3%A9roulante-7693307a-59ef-400a-b769-c5402dce407b) in excel, you can select a column of data then **righ click** then select **define name** the name will be the name of the range and how it will be referred to.
 The **refers to** is the range itself and is autopopulated with the range of selected cells when clicking on **define name**
 
-#####2. Dynamic
+##### 2. Dynamic
 To get a [dynamic named range](https://trumpexcel.com/named-ranges-in-excel/) you will need to replace the **refers to** of the named range by this kind of formula (for example if values are in the A column):
 
 	=$A$2:INDEX($A$2:$A$100;COUNTIF($A$2:$A$100;"<>"&""))
@@ -67,7 +67,9 @@ Then you can add this formula in the cells next to `C4` to map the cell using wh
 
 Or you can use this formula which will look in `List` if it finds the value in `C4`:
 
-	=VLOOKUP(C4;List;2;FALSE)
+```
+=VLOOKUP(C4;List;2;FALSE)
+```
 
 #### Have a google like search
 
@@ -82,13 +84,17 @@ Or you can use this formula which will look in `List` if it finds the value in `
 - Column #1 : **Available Values** you add the values that will be looked at
 - Column #2 : **Criteria matching** you add this formula:
 
-	=--ISNUMBER(IFERROR(SEARCH($B$3,E3,1);""))
+```
+=--ISNUMBER(IFERROR(SEARCH($B$3,E3,1);""))
+```
 
 This formula returns 1 if part of what is in cell `E3` in the **Available values** coulumn is also in cell `B3`, the **search cell**.
 
 - Column #3 : **Occurence count** you add this formula:
 
-	=IF(F3=1;COUNTIF($F$3:F3,1);"") 
+```
+=IF(F3=1;COUNTIF($F$3:F3,1);"") 
+```
 
 This formula starting at `F3`, with `F3` the **criteria matching** look if the **criteria matching** is 1 and count how many there was since first cell (`$F$3`).
 
@@ -100,7 +106,9 @@ With `G3` in the **Occurence count** column. It works with `MATCH` and `INDEX` l
 
 You can use this formula to create the dynamic range from the **found values** in `H3`:
 
-	=$H$3:INDEX($H$3:$H$22;MAX($G$3:$G$22);1)
+```
+=$H$3:INDEX($H$3:$H$22;MAX($G$3:$G$22);1)
+```
 
 The name will be used for the combobox (dropdown in developper > insert > activeX). Here are the properties to look for:
 
@@ -129,15 +137,14 @@ This sub ComboBox1_change() overwrites the default attitude of the ComboBox obje
 Here are an example on how to call a subroutine: [here](https://msdn.microsoft.com/en-us/library/office/gg251432.aspx)
 It can be tricky.
 ```vb
-TestSub "N23:Q23", 1
-Call TestSub("N23:Q23", 1)
+Test "N23:Q23", 1
+Call Test("N23:Q23", 1)
 
 
-Sub TestSub(xRange As Range, val As Integer)
+Sub Test(xRange As Range, val As Integer)
 	'some coding
 End Sub
 ```
-
 
 
 #### Accelerate Macro
@@ -183,7 +190,8 @@ Userform
 Procedure to close a file
 
 ```vb
-'Sub arret() stop the current sub
+Sub arret()
+	'stop the current sub
     ActiveWorkbook.Save
     ActiveWorkbook.Close True
 End Sub
