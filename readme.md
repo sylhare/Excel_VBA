@@ -28,6 +28,7 @@ To learn you can start with "recording macro" to see what excel is recording, bu
 - [Extend Office: AutoComplete](https://www.extendoffice.com/documents/excel/2401-excel-drop-down-list-autocomplete.html)
 - [Convert data type vb](http://www.convertdatatypes.com/Language-VB6-VBA.html)
 
+
 ## Excel autofind drop down menu
 
 #### Create a Named range
@@ -100,7 +101,9 @@ This formula starting at `F3`, with `F3` the **criteria matching** look if the *
 
 - Column #4 : **Found Values** stack all of the criteria matching values with this formula:
 
-	=IFERROR(INDEX($E$3:$E$22,MATCH(ROWS($G$3:G3),$G$3:$G$22,0)),"")
+```
+=IFERROR(INDEX($E$3:$E$22,MATCH(ROWS($G$3:G3),$G$3:$G$22,0)),"")
+```
 
 With `G3` in the **Occurence count** column. It works with `MATCH` and `INDEX` looking for occurence. The `IFERROR` will show the corresponding value indexed, or nothing.
 
@@ -129,6 +132,8 @@ End Sub
 ```
 
 This sub ComboBox1_change() overwrites the default attitude of the ComboBox object when changed.
+
+You also need some lists for the comboBox to update automatically, one for the dropdown that will be the results of the matched value of the occurence count.
 
 ## Other tips
 

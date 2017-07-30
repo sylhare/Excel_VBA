@@ -32,14 +32,28 @@ Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean
     Application.EnableEvents = False
     
     Set combo = wks.OLEObjects("ComboBox1")
-    With combo
-        .ListFillRange = ""
-        .LinkedCell = "search!$J$2"
-        .Visible = False
-    End With
+    
+    'Define which search page to look for when using the drop for two different columns in the same page
+    'Set the searching cell when doube clicking on column A
+    If Not Intersect(Target, Range("A:A")) Is Nothing Then
+        With combo
+            .LinkedCell = "search!$J$2"
+            .Visible = False
+        End With
+    End If
+
+'Set the searching cell when doube clicking on column H
+    If Not Intersect(Target, Range("H:H")) Is Nothing Then
+        With combo
+            .LinkedCell = "search!$J$5"
+            .Visible = False
+        End With
+    End If
+
     If Target.Validation.Type = 3 Then
         Cancel = True
-        'Define the value of the range, based on data validation
+
+        'Define the value of the range, based on data validation of the target cell
         dropRange = Target.Validation.Formula1
         dropRange = Right(dropRange, Len(dropRange) - 1)
         
@@ -68,6 +82,13 @@ Private Sub ComboBox1_KeyDown(ByVal _
         ByVal Shift As Integer)
     'Define the behaviour of the comboBox named "ComboBox1" when key is touched
     'Modified to work with one "searching" case linked to the ComboBox which value will be copied to the activeCell
+    Dim value As String
+    
+    If Worksheets("search").Range("$J$2").value <> "" Then
+        value = Worksheets("search").Range("$J$2").value
+    Else
+        value = Worksheets("search").Range("$J$5").value
+    End If
     
     Select Case KeyCode
         Case 9 'Tab key
