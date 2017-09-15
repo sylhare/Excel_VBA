@@ -137,6 +137,10 @@ You also need some lists for the comboBox to update automatically, one for the d
 
 ## Other tips
 
+#### Comment / Uncomment bloc of code
+
+There's a Comment / Uncomment button that can be toggled. For that **right click** on the **menu bar** then click on **edit**, the edit tool bar will appear (you can place it in your quick access bar). There should be a **comment** and **Uncomment** **icon**. This commands will basically add or remove `'` at the beginning of every selected ligns. 
+
 #### Calling a Sub
 
 Here are an example on how to call a subroutine: [here](https://msdn.microsoft.com/en-us/library/office/gg251432.aspx)
