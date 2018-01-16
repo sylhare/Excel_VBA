@@ -42,8 +42,9 @@ The **refers to** is the range itself and is autopopulated with the range of sel
 ##### 2. Dynamic
 To get a [dynamic named range](https://trumpexcel.com/named-ranges-in-excel/) you will need to replace the **refers to** of the named range by this kind of formula (for example if values are in the A column):
 
+```coffee
 	=$A$2:INDEX($A$2:$A$100;COUNTIF($A$2:$A$100;"<>"&""))
-
+```
 This formula will start looking at value from `A2` to the index (the coordinates) of the last non empty cell (up to 100 in here).
 It will only refers to the populated cells in the dynamic named range.
 
@@ -56,7 +57,7 @@ It will only refers to the populated cells in the dynamic named range.
 
 Then you can add this formula in the cells next to `C4` to map the cell using what has been entered in `C4`.
 
-```
+```coffee
 =INDIRECT("tab_name!"&ADDRESS(MATCH(C4;List;0)+1;COLUMN(List)-1))
 ```
 
@@ -68,7 +69,7 @@ Then you can add this formula in the cells next to `C4` to map the cell using wh
 
 Or you can use this formula which will look in `List` if it finds the value in `C4`:
 
-```
+```coffee
 =VLOOKUP(C4;List;2;FALSE)
 ```
 
@@ -85,15 +86,15 @@ Or you can use this formula which will look in `List` if it finds the value in `
 - Column #1 : **Available Values** you add the values that will be looked at
 - Column #2 : **Criteria matching** you add this formula:
 
-```
-=--ISNUMBER(IFERROR(SEARCH($B$3,E3,1);""))
+```coffee
+=ISNUMBER(IFERROR(SEARCH($B$3,E3,1);""))
 ```
 
 This formula returns 1 if part of what is in cell `E3` in the **Available values** coulumn is also in cell `B3`, the **search cell**.
 
 - Column #3 : **Occurence count** you add this formula:
 
-```
+```coffee
 =IF(F3=1;COUNTIF($F$3:F3,1);"") 
 ```
 
@@ -101,7 +102,7 @@ This formula starting at `F3`, with `F3` the **criteria matching** look if the *
 
 - Column #4 : **Found Values** stack all of the criteria matching values with this formula:
 
-```
+```coffee
 =IFERROR(INDEX($E$3:$E$22,MATCH(ROWS($G$3:G3),$G$3:$G$22,0)),"")
 ```
 
@@ -109,7 +110,7 @@ With `G3` in the **Occurence count** column. It works with `MATCH` and `INDEX` l
 
 You can use this formula to create the dynamic range from the **found values** in `H3`:
 
-```
+```coffee
 =$H$3:INDEX($H$3:$H$22;MAX($G$3:$G$22);1)
 ```
 
