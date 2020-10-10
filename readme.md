@@ -1,7 +1,7 @@
 # Excel VBA
 
 In excel, you have to enable first the macro (and select the developper option). 
-Then you can press `[ALT] + [F11]` to go into edit macro mode. 
+Then you can press <kbd>ALT</kbd> + <kbd>F11</kbd> to go into edit macro mode. 
 To learn you can start with "recording macro" to see what excel is recording, but it's not the most efficient way.
 
 You can copy / paste the files `.bas` in the `src` folder inside the macro editor (VBS) to execute them.
