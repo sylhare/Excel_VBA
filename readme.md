@@ -8,7 +8,7 @@ You can copy / paste the files `.bas` in the `src` folder inside the macro edito
 
 #### Sources
 
-- [Microsoft getting started](https://msdn.microsoft.com/fr-fr/library/office/ee814737(v=office.14).aspx)
+- Microsoft Excel 2010: [getting started](https://msdn.microsoft.com/fr-fr/library/office/ee814737(v=office.14).aspx)
 
 
 ##### French Tips
@@ -16,8 +16,6 @@ You can copy / paste the files `.bas` in the `src` folder inside the macro edito
 - [Excel plus: VBA tips](http://www.excel-plus.fr/category/vba/) 
 - [Excel pratique VBA tips](https://www.excel-pratique.com/)
 - [Developpez.com outlook vba](http://dolphy35.developpez.com/article/outlook/vba/#LV-A)
-- [Excel exercices and solutions](http://users.skynet.be/micdub/vba12.htm)
-- [Excel dates](http://boisgontierjacques.free.fr/pages_site/dates.htm#saisieDate)
 
 
 ##### English Tips
@@ -25,7 +23,6 @@ You can copy / paste the files `.bas` in the `src` folder inside the macro edito
 - [Ozgrid excel vb tutorial](http://www.ozgrid.com/Excel/free-training/ExcelVBA1/excel-vba1-index.htm)
 - [Excel easy: vba macro](http://www.excel-easy.com/vba.html)
 - [Tutorialspoint VBA](https://www.tutorialspoint.com/vba/index.htm)
-- [Techonthenet vba functions](https://www.techonthenet.com/excel/formulas/index_vba.php)
 - [Rondebruin mail with outlook](http://www.rondebruin.nl/win/s1/outlook/mail.htm)
 - [Extend Office: AutoComplete](https://www.extendoffice.com/documents/excel/2401-excel-drop-down-list-autocomplete.html)
 - [Convert data type vb](http://www.convertdatatypes.com/Language-VB6-VBA.html)
@@ -42,7 +39,7 @@ Find out the detail tutorial on how to do it here:
 
 You can find everything on my blog at:
 
- - [Excel Macro tips](http://localhost:4000/2015/04/17/Excel-macro-tips.html)
+ - [Excel Macro tips](https://sylhare.github.io/2015/04/17/Excel-macro-tips.html)
 
 #### Comment / Uncomment bloc of code
 
