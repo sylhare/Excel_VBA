@@ -204,9 +204,9 @@ End Function
 
 Function firstJanMon(dYear As Integer, d As Date)
 
-'8 parceque première répétition des jour. Weekday renvoi le "numéro de série du jour" (Dimanche = 1, lundi = 2, à samedi = 7)
+'8 -> première répétition. Weekday renvoi le "numéro de série du jour" (Dimanche = 1, lundi = 2, à samedi = 7)
 'Pour Obtenir le premier lundi, il faut obtenir le numéro de série du lundi : 2 pour la première semaine. 8-6=2 donc 6 janvier. Pour mardi : 3 -> 8-5=3 donc 5 janvier. Pour Samedi : 7 -> 8-7=1 d'où le 8 janvier.
-'weekdays fait le modulo et renvoi entre 1(Dimanche) et 7(Samedi). Le lundi (2) Première apparition du lundi dans les 8 jours
+'weekdays fait le modulo et renvoie entre 1(Dimanche) et 7(Samedi). Le lundi (2) Première apparition du lundi dans les 8 jours
 Cells(17, 1).Value = Format(DateSerial(dYear, 1, 8) - Weekday(DateSerial(dYear, 1, 8) - 2), "dd/mm/yy")
 
 'On prend le numéro de série du 7 janvier moins ce numéro de série - 2 (Pour le lundi) modulo 7 pour obtenir le premier de la semaine
